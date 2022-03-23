@@ -3,18 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello.component';
+import { DragDropModule } from '@angular/cdk/drag-drop/typings/drag-drop-module';
 // Import your library
-import { InternationalPhoneNumberModule } from 'ngx-international-phone-number';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ,
-  
-      // InternationalPhoneNumberModule module
-    InternationalPhoneNumberModule,
+  imports: [ 
+    BrowserModule,
+    FormsModule,
+    DragDropModule
   
   ],
-  declarations: [ AppComponent, HelloComponent ],
+  declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

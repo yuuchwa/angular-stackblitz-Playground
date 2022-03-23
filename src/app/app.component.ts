@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,10 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: [ './app.component.scss' ]
 })
 export class AppComponent  {
-  itemTemplates = [
-    { id: 1, name: "peter"},
-    { id: 2, name: "Sandro"},
-    { id: 3, name: "Niklas"},
-    { id: 4, name: "Hans"},
-  ]
+
+  public movies: string[];
+
+  ngOnInit() {
+    this.movies = [
+      'Blade Runner',
+      'Cool Hand Luke',
+      'Heat',
+      'Juice',
+      'The Far Side of the World',
+      'Morituri',
+      'Napoleon Dynamite',
+      'Pulp Fiction'
+    ];
+  }
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+  }
 }

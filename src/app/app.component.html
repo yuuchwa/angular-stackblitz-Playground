@@ -1,14 +1,5 @@
-<div class="group-container">
-  <div class="container-header"> Groupheader </div>
-    <div *ngFor="let item of itemTemplates"></div>
-    <div class="group-header">
-      <ng-template>
-        <div class="item-box"></div>
-        {{ item.name }}
-      </ng-template>
-    </div>
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" )>
+  <div class="example-box" *ngFor="let movieName of movies" cdkDrag>
+    {{ movieName }}
   </div>
-
-<div>
-
 </div>
