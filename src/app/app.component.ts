@@ -1,4 +1,4 @@
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,21 +8,30 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
 
-  public movies: string[];
+  public movies: Movie[];
 
   ngOnInit() {
     this.movies = [
-      'Blade Runner',
-      'Cool Hand Luke',
-      'Heat',
-      'Juice',
-      'The Far Side of the World',
-      'Morituri',
-      'Napoleon Dynamite',
-      'Pulp Fiction'
+      { name: 'Blade Runner', category: 1 },
+      { name: 'Cool Hand Luke', category: 2 },
+      { name: 'Heat', category: 3 },
+      { name: 'Juice', category: 4 },
     ];
   }
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+  moviesWatched = [ ];
+  onDrop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(this.movies, event.previousIndex, event.currentIndex);      
+    }
+    else {
+      transferArrayItem(event.previousContainer.data,
+        event.container.data, event.previousIndex,
+        event.currentIndex);
+    }
   }
+}
+
+export interface Movie {
+  name: string,
+  category: number,
 }

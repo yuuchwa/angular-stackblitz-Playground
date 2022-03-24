@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { DragDropModule } from '@angular/cdk/drag-drop/typings/drag-drop-module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 // Import your library
 
 @NgModule({

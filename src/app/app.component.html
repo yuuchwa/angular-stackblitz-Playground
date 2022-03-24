@@ -1,5 +1,49 @@
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)" )>
-  <div class="example-box" *ngFor="let movieName of movies" cdkDrag>
-    {{ movieName }}
+<div class="container">
+  <h2>Movies</h2>
+  <div
+    cdkDropList
+    #moviesList="cdkDropList"
+    [cdkDropListData]="movies"
+    [cdkDropListConnectedTo]="[doneMovieList]"
+    class="movie-list"
+    (cdkDropListDropped)="onDrop($event)"
+  >
+    <div class="movie-block" *ngFor="let movie of movies" cdkDrag>
+      {{ movie }}
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Movies Watched</h2>
+  <div
+    cdkDropList
+    #doneMovieList="cdkDropList"
+    [cdkDropListData]="moviesWatched"
+    [cdkDropListConnectedTo]="[moviesList]"
+    class="movie-list"
+    (cdkDropListDropped)="onDrop($event)"
+  >
+    <div
+      class="movie-block"
+      *ngFor="let moviesWatched of moviesWatched"
+      cdkDrag
+    >
+      {{ moviesWatched }}
+    </div>
+  </div>
+</div>
+
+<div>
+  <div *ngFor="let movie of movies">
+    <div class="group">
+      <div>
+        <input type="checkbox" class="group-input" content="">
+        <label for="section1" class="group-label"> {{ movie.category }} </label>
+        <div class="group-content">
+          {{ movie.name }}
+        </div>
+      </div>
+    </div>
   </div>
 </div>
