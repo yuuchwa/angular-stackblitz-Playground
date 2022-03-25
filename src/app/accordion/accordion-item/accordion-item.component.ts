@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Movie } from '../../Interface/Movie';
 
 @Component({
   selector: 'app-accordion-item',
@@ -8,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class AccordionItemComponent implements OnInit {
 
   @Input() title: string;
+  @Input() movies: Movie[];
   showBody = false;
 
   constructor() { }

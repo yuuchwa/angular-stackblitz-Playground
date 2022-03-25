@@ -1,6 +1,6 @@
 <div class="acc-header" (click)="toggle()">
-  <div class="header-title">
-    {{title}}
+  <div class="header-title" *ngFor="let movie of movies">
+    {{ movie.name }}
   </div>
   <div class="arrow"><i class="ion-ios-arrow-down"></i></div>
 </div>

@@ -1,5 +1,6 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component } from '@angular/core';
+import { Movie } from './Interface/Movie';
 
 @Component({
   selector: 'my-app',
@@ -29,9 +30,4 @@ export class AppComponent  {
         event.currentIndex);
     }
   }
-}
-
-export interface Movie {
-  name: string,
-  category: number,
 }

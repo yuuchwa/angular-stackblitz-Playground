@@ -55,8 +55,9 @@
 <!-- https://www.youtube.com/watch?v=rkhH7Nk8mOM -->
 <div class="card">
   <div>Accordion Demo</div>
-  <app-accordion>
-    <app-accordion-item title="title 1"> ist text </app-accordion-item>
-    <app-accordion-item title="title 2"> Dummy text 2</app-accordion-item>
-  </app-accordion>
+  <div *ngFor="let movie of movies">
+    <app-accordion>
+        <app-accordion-item [movies]=movies> {{ movie.category }} </app-accordion-item>
+    </app-accordion>
+</div>
 </div>
