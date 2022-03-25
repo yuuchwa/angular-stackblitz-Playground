@@ -34,11 +34,12 @@
   </div>
 </div>
 
+<!--https://codepen.io/dcode-software/pen/oNjXqzg-->
 <div>
   <div *ngFor="let movie of movies">
-    <div class="group">
+    <div class="accordion">
       <div>
-        <input type="checkbox" class="group-input" content="">
+        <input type="checkbox" class="group-input" content="" />
         <label for="section1" class="group-label"> {{ movie.category }} </label>
         <div class="group-content">
           {{ movie.name }}
@@ -46,4 +47,16 @@
       </div>
     </div>
   </div>
+</div>
+<br />
+<br />
+<br />
+
+<!-- https://www.youtube.com/watch?v=rkhH7Nk8mOM -->
+<div class="card">
+  <div>Accordion Demo</div>
+  <app-accordion>
+    <app-accordion-item title="title 1"> ist text </app-accordion-item>
+    <app-accordion-item title="title 2"> Dummy text 2</app-accordion-item>
+  </app-accordion>
 </div>

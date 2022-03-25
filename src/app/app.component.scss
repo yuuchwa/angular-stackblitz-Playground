@@ -21,6 +21,7 @@
     overflow: hidden;
     margin-top: 25px;
   }
+
   .movie-block {
     padding: 20px 10px;
     border-bottom: solid 1px #ccc;
@@ -54,7 +55,10 @@
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
 
-  .group {
+
+  /* Accordion Tab */
+
+  .accordion {
     max-width: 400px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -62,46 +66,45 @@
     font-family: 'Quicksand', sans-serif;
     background: green;
 
-    &:hover {
-      background: rgba(0, 0, 0, 0.1);
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-      width: 12px;
-      height: 6px;
-      background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
-      background-size: contain;
-      transition: transform 0.4s;
-    }
-
-    &.group-label,
-    &.group-content {
+    .group-label,
+    .group-content {
       padding: 14px 20px;
     }
 
-    &.group-label {
+    .group-label {
       display: block;
       color: #ffff;
       font-weight: 500;
       cursor: pointer;
       position: relative;
       transition: transform 0.1;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 6px;
+        background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+        background-size: contain;
+        transition: transform 0.4s;
+      }
     }
 
-
-    &.group-content {
+    .group-content {
       background: #ffffff;
       line-height: 1.6;
       font-size: 0.85em;
       display: none;
     }
 
-    &.group-input {
+    .group-input {
       display: none;
       
       &:checked ~ .group-content { /* traget the next accoridon_content element */
@@ -114,43 +117,17 @@
     }
   }
 
-    
-  
+  .panel {
+    cursor: move;
+  }
+}
 
-  /* .group-container {
-    font-size: 10px;
-    width: auto;
-    height: 500px;
-    border: 2px solid;
 
-    .container-header {
-      font-weight: bold;
-      height: 20px;
-    }
-  
-    .item-box {
-      width: 300px;
-      height: 200px;
-      border: solid 1px #ccc;
-      color: rgba(0, 0, 0, 0.87);
-      cursor: move; // Zeigt den Cursor als move icon an
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: #fff;
-      border-radius: 4px; // Rundet die Kanten der Box ab.
-      position: relative;
-      z-index: 1;
-      transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
-      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
-        0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    }
-  
-    .item-box:active {
-      box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-      0 8px 10px 1px rgba(0, 0, 0, 0.14),
-      0 3px 14px 2px rgba(0, 0, 0, 0.12);
-    }
-  } */
+.card {
+  margin: 50px;
+  width: 500px;
+
+  div {
+    margin-bottom: 20px;
+  }
 }
