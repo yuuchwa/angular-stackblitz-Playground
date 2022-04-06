@@ -57,7 +57,7 @@
   <div>Accordion Demo</div>
   <div *ngFor="let movie of movies">
     <app-accordion>
-        <app-accordion-item [movies]=movies> {{ movie.category }} </app-accordion-item>
+        <app-accordion-item [movie]=movie> {{ movie.category }} </app-accordion-item>
     </app-accordion>
 </div>
 </div>

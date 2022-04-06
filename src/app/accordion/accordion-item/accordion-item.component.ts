@@ -9,7 +9,7 @@ import { Movie } from '../../Interface/Movie';
 export class AccordionItemComponent implements OnInit {
 
   @Input() title: string;
-  @Input() movies: Movie[];
+  @Input() movie: Movie;
   showBody = false;
 
   constructor() { }
