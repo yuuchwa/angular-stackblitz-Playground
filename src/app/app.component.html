@@ -1,15 +1,20 @@
 <div class="container">
   <h2>Movies</h2>
-  <div
+  <!-- <div
+    class="movie-list"
     cdkDropList
     #moviesList="cdkDropList"
     [cdkDropListData]="movies"
     [cdkDropListConnectedTo]="[doneMovieList]"
-    class="movie-list"
     (cdkDropListDropped)="onDrop($event)"
-  >
-    <div class="movie-block" *ngFor="let movie of movies" cdkDrag>
-      {{ movie }}
+    > -->
+  <div class="movie-list">
+    <div cdkDropListGroup *ngFor="let movie of movies">
+      <app-accordion>
+        <app-accordion-item [movie]="movie">
+          {{ movie.category }}
+        </app-accordion-item>
+      </app-accordion>
     </div>
   </div>
 </div>
@@ -34,30 +39,14 @@
   </div>
 </div>
 
-<!--https://codepen.io/dcode-software/pen/oNjXqzg-->
-<div>
-  <div *ngFor="let movie of movies">
-    <div class="accordion">
-      <div>
-        <input type="checkbox" class="group-input" content="" />
-        <label for="section1" class="group-label"> {{ movie.category }} </label>
-        <div class="group-content">
-          {{ movie.name }}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<br />
-<br />
-<br />
-
 <!-- https://www.youtube.com/watch?v=rkhH7Nk8mOM -->
 <div class="card">
   <div>Accordion Demo</div>
   <div *ngFor="let movie of movies">
     <app-accordion>
-        <app-accordion-item [movie]=movie> {{ movie.category }} </app-accordion-item>
+      <app-accordion-item [movie]="movie">
+        {{ movie.category }}
+      </app-accordion-item>
     </app-accordion>
-</div>
+  </div>
 </div>
