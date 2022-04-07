@@ -5,7 +5,11 @@
   <div class="arrow"><i class="ion-ios-arrow-down"></i></div>
 </div>
 <div *ngIf="showBody">
-  <div class="acc-body" *ngFor="let movie of movies">
-    {{ movie.name }}
+  <div
+    cdkDropList
+    [cdkDropListData]="movies">
+      <div class="acc-body" *ngFor="let movie of movies" cdkDrag>
+      {{ movie.name }}
+    </div>
   </div>
 </div>

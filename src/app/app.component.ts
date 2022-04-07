@@ -18,8 +18,8 @@ export class AppComponent {
     this.moviesCategory = [
       [
         { name: 'Blade Runner', category: 'action' },
-        { name: 'Blade Runner', category: 'action' },
-        { name: 'Blade Runner', category: 'action' },
+        { name: 'Blade Lunner', category: 'action' },
+        { name: 'Blade Funner', category: 'action' },
       ],
       [
         { name: 'Cool Hand Luke', category: 'funny' },

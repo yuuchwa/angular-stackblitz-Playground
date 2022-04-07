@@ -9,15 +9,8 @@ import { AccordionModule } from './accordion/accordion.module';
 // Import your library
 
 @NgModule({
-  imports: [ 
-    BrowserModule,
-    FormsModule,
-    DragDropModule,
-    AccordionModule
-  ],
-  declarations: [ 
-    AppComponent,
-  ],
-  bootstrap:    [ AppComponent ],
+  imports: [BrowserModule, FormsModule, DragDropModule, AccordionModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
