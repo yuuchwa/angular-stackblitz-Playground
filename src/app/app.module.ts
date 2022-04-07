@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { AccordionComponent } from './accordion/accordion.component';
 import { AccordionModule } from './accordion/accordion.module';
 // Import your library
 

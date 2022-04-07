@@ -12,6 +12,7 @@ import { Movie } from '../../Interface/Movie';
   styleUrls: ['./accordion-item.component.scss'],
 })
 export class AccordionItemComponent implements OnInit {
+  @Input() title: string;
   @Input() movies: Movie[];
   showBody = false;
 
@@ -25,7 +26,8 @@ export class AccordionItemComponent implements OnInit {
     this.showBody = !this.showBody;
   }
 
-  onDdrop(event: CdkDragDrop<string[]>) {
+  onDrop(event: CdkDragDrop<string[]>) {
+    console.log(event);
     if (event.previousContainer === event.container) {
       moveItemInArray(
         event.container.data,

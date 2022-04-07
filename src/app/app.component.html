@@ -1,50 +1,41 @@
-<div class="container">
+<div class="container" cdkDropListGroup>
   <h2>Movies</h2>
-  <!-- <div
-    class="movie-list"
-    cdkDropList
-    #moviesList="cdkDropList"
-    [cdkDropListData]="movies"
-    [cdkDropListConnectedTo]="[doneMovieList]"
-    (cdkDropListDropped)="onDrop($event)"
-    > -->
   <div class="movie-list">
-    <div *ngFor="let movies of moviesCategory">
-    <app-accordion>
-      <app-accordion-item [movies]="movies">
-      </app-accordion-item>
-    </app-accordion>
+    <div class="movie-list">
+      <div *ngFor="let movies of moviesCategory">
+        <app-accordion>
+          <app-accordion-item [movies]="movies"> </app-accordion-item>
+        </app-accordion>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="container">
-  <h2>Movies Watched</h2>
-  <div
-    cdkDropList
-    #doneMovieList="cdkDropList"
-    [cdkDropListData]="moviesWatched"
-    [cdkDropListConnectedTo]="[moviesList]"
-    class="movie-list"
-    (cdkDropListDropped)="onDrop($event)"
-  >
+  <div class="container">
+    <h2>Movies Watched</h2>
     <div
-      class="movie-block"
-      *ngFor="let moviesWatched of moviesWatched"
-      cdkDrag
+     class="movie-list"
+      cdkDropList
+      #doneMovieList="cdkDropList"
+      [cdkDropListData]="moviesWatched"
+      (cdkDropListDropped)="onDrop($event)"
     >
-      {{ moviesWatched }}
+      <div
+        class="movie-block"
+        *ngFor="let moviesWatched of moviesWatched"
+        cdkDrag
+      >
+        {{ moviesWatched.name }}
+      </div>
     </div>
   </div>
-</div>
 
-<!-- https://www.youtube.com/watch?v=rkhH7Nk8mOM -->
-<div class="card">
-  <div>Accordion Demo</div>
-  <div *ngFor="let movies of movieCategory">
-    <app-accordion>
-      <app-accordion-item [movies]="movies">
-      </app-accordion-item>
-    </app-accordion>
+  <!-- https://www.youtube.com/watch?v=rkhH7Nk8mOM -->
+  <div class="card">
+    <div>Accordion Demo</div>
+    <div *ngFor="let movies of movieCategory">
+      <app-accordion>
+        <app-accordion-item [movies]="movies"> </app-accordion-item>
+      </app-accordion>
+    </div>
   </div>
 </div>

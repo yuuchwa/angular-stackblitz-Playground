@@ -1,13 +1,14 @@
 <div class="acc-header" (click)="toggle()">
   <div class="header-title">
-    {{ movies[0].category }}
+    Title
   </div>
   <div class="arrow"><i class="ion-ios-arrow-down"></i></div>
 </div>
 <div *ngIf="showBody">
   <div
     cdkDropList
-    [cdkDropListData]="movies">
+    [cdkDropListData]="movies"
+    (cdkDropListDropped)="onDrop($event)">
       <div class="acc-body" *ngFor="let movie of movies" cdkDrag>
       {{ movie.name }}
     </div>

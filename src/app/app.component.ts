@@ -39,7 +39,8 @@ export class AppComponent {
     ];
   }
   moviesWatched = [];
-  onDrop(event: CdkDragDrop<string[]>) {
+
+  onDrop(event: CdkDragDrop<Movie[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
         this.moviesCategory,
