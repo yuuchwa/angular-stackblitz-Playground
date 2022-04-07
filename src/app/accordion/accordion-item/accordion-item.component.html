@@ -1,11 +1,11 @@
 <div class="acc-header" (click)="toggle()">
   <div class="header-title">
-    {{ movie.name }}
+    {{ movies[0].category }}
   </div>
   <div class="arrow"><i class="ion-ios-arrow-down"></i></div>
 </div>
 <div *ngIf="showBody">
-  <div class="acc-body">
-    <ng-content></ng-content>
+  <div class="acc-body" *ngFor="let movie of movies">
+    {{ movie.name }}
   </div>
 </div>

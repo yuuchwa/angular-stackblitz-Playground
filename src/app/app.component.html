@@ -9,12 +9,11 @@
     (cdkDropListDropped)="onDrop($event)"
     > -->
   <div class="movie-list">
-    <div cdkDropListGroup *ngFor="let movie of movies">
-      <app-accordion>
-        <app-accordion-item [movie]="movie">
-          {{ movie.category }}
-        </app-accordion-item>
-      </app-accordion>
+    <div *ngFor="let movies of movieCategory">
+    <app-accordion>
+      <app-accordion-item [movies]="movies">
+      </app-accordion-item>
+    </app-accordion>
     </div>
   </div>
 </div>
@@ -42,10 +41,9 @@
 <!-- https://www.youtube.com/watch?v=rkhH7Nk8mOM -->
 <div class="card">
   <div>Accordion Demo</div>
-  <div *ngFor="let movie of movies">
+  <div *ngFor="let movies of movieCategory">
     <app-accordion>
-      <app-accordion-item [movie]="movie">
-        {{ movie.category }}
+      <app-accordion-item [movies]="movies">
       </app-accordion-item>
     </app-accordion>
   </div>

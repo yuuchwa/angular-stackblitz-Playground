@@ -1,4 +1,4 @@
 export interface Movie {
-  name: string,
-  category: number,
+  name: string;
+  category: string;
 }

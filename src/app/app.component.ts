@@ -1,33 +1,58 @@
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 import { Component } from '@angular/core';
 import { Movie } from './Interface/Movie';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.scss' ]
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent  {
-
-  public movies: Movie[];
+export class AppComponent {
+  public moviesCategory: Movie[][];
 
   ngOnInit() {
-    this.movies = [
-      { name: 'Blade Runner', category: 1 },
-      { name: 'Cool Hand Luke', category: 2 },
-      { name: 'Heat', category: 3 },
-      { name: 'Juice', category: 4 },
+    this.moviesCategory = [
+      [
+        { name: 'Blade Runner', category: 'action' },
+        { name: 'Blade Runner', category: 'action' },
+        { name: 'Blade Runner', category: 'action' },
+      ],
+      [
+        { name: 'Cool Hand Luke', category: 'funny' },
+        { name: 'Pokemon', category: 'funny' },
+        { name: 'Digimon', category: 'funny' },
+      ],
+      [
+        { name: 'Prim', category: 'sad' },
+        { name: 'Joker', category: 'sad' },
+      ],
+      [
+        { name: 'Juice', category: 'doku' },
+        { name: 'iron Van', category: 'doku' },
+        { name: 'Lokshu', category: 'doku' },
+        { name: 'Shang shi', category: 'doku' },
+      ],
     ];
   }
-  moviesWatched = [ ];
+  moviesWatched = [];
   onDrop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
-      moveItemInArray(this.movies, event.previousIndex, event.currentIndex);      
-    }
-    else {
-      transferArrayItem(event.previousContainer.data,
-        event.container.data, event.previousIndex,
-        event.currentIndex);
+      moveItemInArray(
+        this.moviesCategory,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
     }
   }
 }
